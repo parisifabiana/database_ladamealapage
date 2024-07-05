@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $items = Item::inRandomOrder()->paginate(6); //in ordine random
-        return view('welcome', ['$items' => $items]);
+        return view('home', ['$items' => $items]);
     }
 
     /**

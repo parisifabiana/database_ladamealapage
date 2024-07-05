@@ -31,7 +31,7 @@ class ItemController extends Controller
         $collections = Collection::all();
         $colors = Color::all();
         $sizes = Size::all();
-        $items = Item::all();
+        $items = Item::orderby('id', 'asc')->paginate(4);
         return view('admin.items.index', compact('items', 'categories', 'collections', 'colors', 'sizes'));
     }
     /**
@@ -89,7 +89,6 @@ class ItemController extends Controller
             $item->collections()->attach($validateData['collections']);
             $item->colors()->attach($validateData['colors']);
             $item->sizes()->attach($validateData['sizes']);
-            $item->img()->attach($validateData['img']);
         }
 
         return redirect()->route('admin.items.index');
@@ -108,7 +107,17 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // Trova il film da modificare
+        $item = Item::findOrFail($id);
+        // Ottieni tutti i generi disponibili
+        $collections = Collection::all();
+        // Ottieni tutti i registi disponibili
+        $categories = Category::all();
+        // Ottieni tutti gli attori disponibili
+        $colors = Color::all();
+        // Passa i dati alla vista di modifica
+        $sizes = Size::all();
+        return view('admin.items.edit', compact('item', 'categories', 'collections', 'colors', 'sizes'));
     }
 
     /**
@@ -116,7 +125,27 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //validare i dati
+        $validateData = $this->validateItemData($request);
+        $item = Item::findOrFail($id);
+        $item->fill($validateData);
+
+        if ($request->hasFile('img')) {
+            //gestiamo l'immagine
+            $fileName = time() . '_' . $request->file('img')->getClientOriginalName();
+            //carica l'immagine dentro la cartella storage/imgs
+            $imgPath = $request->file('img')->storeAs('imgs', $fileName, 'public');
+            //salva il percorso nel campo del db
+            $item->img = $imgPath;
+        }
+
+        if ($item->save()) {
+            $item->collections()->sync($validateData['collections']);
+            $item->colors()->sync($validateData['colors']);
+            $item->sizes()->sync($validateData['sizes']);
+
+            return redirect()->route('admin.items.index');
+        }
     }
 
     /**
