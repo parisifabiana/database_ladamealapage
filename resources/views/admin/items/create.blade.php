@@ -1,12 +1,20 @@
 @extends('layouts.admin') 
 
 @section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title', 'La dame à la page')</title>
+</head>
+<body>
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="p-5 bg-light rounded">
                 <h2 class="mb-4">Inserisci un nuovo prodotto</h2>
-                {{-- @dd($items) --}}
-                @if ($errors->any())
+                {{-- @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -14,7 +22,7 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif
+                @endif --}}
                 <!-- Nome del prodotto-->
                 <div class="form-group mb-3">
                     <label for="name" class="text-primary">Nome</label>
@@ -64,7 +72,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="img" class="form-label">Immagine del prodotto</label>
-                        <input type="file" class="form-control" id="img" name="img" required>
+                        <input type="file" class="form-control" id="img" name="img" enctype="multipart/form-data">
                     </div>
                     <button type="submit" class="btn btn-primary">
                         Invia
@@ -73,4 +81,6 @@
             </div>
         </div>
     </div>
-@endsection
+</body>
+</html>
+@endsection   
