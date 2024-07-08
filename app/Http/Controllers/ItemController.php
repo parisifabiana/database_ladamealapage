@@ -69,7 +69,7 @@ class ItemController extends Controller
 
         if ($request->hasFile('img')) {
             $fileName = time() . '_' . $request->file('img')->getClientOriginalName();
-            $request->file('img')->storeAs('imgs', $fileName, 'public');
+            $request->file('img')->storeAs('img', $fileName, 'public');
             $item->img = $fileName;
         }
 
@@ -104,7 +104,7 @@ class ItemController extends Controller
 
         if ($request->hasFile('img')) {
             $fileName = time() . '_' . $request->file('img')->getClientOriginalName();
-            $imgPath = $request->file('img')->storeAs('imgs', $fileName, 'public');
+            $imgPath = $request->file('img')->storeAs('img', $fileName, 'public');
             $item->img = $imgPath;
         }
 
