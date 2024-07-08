@@ -11,61 +11,78 @@
         {{-- Messaggi di errore e successo --}}
         <table class="table">
             <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrizione</th>
-                <th scope="col">Prezzo</th>
-                <th scope="col">Immagine</th>
-                <th scope="col">Operazioni</th>
-            </tr>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Prezzo</th>
+                    <th scope="col">Immagine</th>
+                    <th scope="col">Operazioni</th>
+                </tr>
             </thead>
             <tbody>
                 @foreach($items as $item)
                 <tr>
-                    <th scope="row"> {{$item->name}} </th>
-                        <td> {{$item->description}} </td> 
-                        <td> {{$item->price}} </td>
-                            <td>
-                                @if (filter_var($item->img, FILTER_VALIDATE_URL))
-                                <img src="{{ $item->img }}" alt="{{ $item->name }}" class="img-thumbnail"
-                                    style="max-width: 150px;">
-                                @elseif($item->img === null)
-                                <img src="https://cdn.pixabay.com/photo/2023/08/11/16/50/water-8183918_1280.jpg" class="img-thumbnail"
-                                style="max-width: 150px;">
-                                @else
-                                <img src="{{ asset('storage/img/' . $item->img) }}" alt="{{ $item->name }}"
-                                    class="img-thumbnail" style="max-width: 150px;">
-                                @endif
-                            </td>
-                            <td>
-                            <a href="{{route('admin.items.edit', $item->id)}}">Modifica</a>
-                            <form action="{{ route('admin.items.destroy', $item->id)}}" method="post">
-                                @csrf
-                                @method('delete')
-                                <input type="submit" value="Cancella" onclick="return confirm('Sei sicuro di cancellare?')"> 
-                            </form>
-                            </td>         
+                    <th scope="row">{{ $item->name }}</th>
+                    <td>{{ $item->description }}</td>
+                    <td>{{ $item->price }}</td>
+                    <td>
+                        @if (filter_var($item->img, FILTER_VALIDATE_URL))
+                        <img src="{{ $item->img }}" alt="{{ $item->name }}" class="img-thumbnail"
+                            style="max-width: 150px;">
+                        @elseif($item->img === null)
+                        <img src="https://cdn.pixabay.com/photo/2023/08/11/16/50/water-8183918_1280.jpg"
+                            class="img-thumbnail" style="max-width: 150px;">
+                        @else
+                        <img src="{{ asset('storage/img/' . $item->img) }}" alt="{{ $item->name }}"
+                            class="img-thumbnail" style="max-width: 150px;">
+                        @endif
+                    </td>
+                    <td>
+                        <a href="{{ route('admin.items.edit', $item->id) }}">Modifica</a>
+                        <form action="{{ route('admin.items.destroy', $item->id) }}" method="post"
+                            style="display:inline;">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value="Cancella"
+                                onclick="return confirm('Sei sicuro di voler cancellare?')">
+                        </form>
+                    </td>
                 </tr>
-                @endforeach 
+                @endforeach
             </tbody>
-            </table>
+        </table>
+
+        {{-- Paginazione --}}
+        <div class="d-flex justify-content-center">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+                    @if ($items->onFirstPage())
+                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                    @else
+                    <li class="page-item"><a class="page-link" href="{{ $items->previousPageUrl() }}">&laquo;</a>
+                    </li>
+                    @endif
+
+                    @foreach ($items->getUrlRange(1, $items->lastPage()) as $page => $url)
+                    @if ($page == $items->currentPage())
+                    <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
+                    @else
+                    <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                    @endif
+                    @endforeach
+
+                    @if ($items->hasMorePages())
+                    <li class="page-item"><a class="page-link" href="{{ $items->nextPageUrl() }}">&raquo;</a></li>
+                    @else
+                    <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                    @endif
                 </ul>
             </nav>
-        </div> 
+        </div>
     </div>
+</div>
+
 @endsection
+
+
+

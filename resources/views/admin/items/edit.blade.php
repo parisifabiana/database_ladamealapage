@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', 'La dame à la page')
 @section('content')
     <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -7,7 +7,7 @@
                 <div class="card-body p-5 bg-light rounded">
                     <h2 class="mb-4">Modifica item</h2>
                     
-                    {{-- @if ($errors->any())
+                    @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
                                 @foreach ($errors->all() as $error)
@@ -15,7 +15,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endif --}}
+                    @endif
                     
                     <form method="POST" action="{{ route('admin.items.update', $item->id) }}" enctype="multipart/form-data">
                         @csrf
