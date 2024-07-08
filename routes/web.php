@@ -6,6 +6,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SizeController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,12 @@ Route::post('/send-email', [EmailController::class, 'sendEmail'])->name('sendEma
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
+
+// Rotta per la pagina shop
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
+// Rotta per visualizzare un singolo item
+Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.show');
 
 
 Route::get('/admin/items', [ItemController::class, 'index'])->name('admin.items.index');

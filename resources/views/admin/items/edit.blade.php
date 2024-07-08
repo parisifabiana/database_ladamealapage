@@ -23,8 +23,8 @@
 
                         <!-- Nome del prodotto -->
                         <div class="mb-3">
-                            <label for="title" class="form-label">Nome</label>
-                            <input type="text" name="title" id="title" class="form-control" value="{{ $item->name }}">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" name="name" id="name" class="form-control" value="{{ $item->name }}">
                         </div>
 
                         <!-- Collezioni del item -->
