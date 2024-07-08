@@ -19,7 +19,7 @@
                         <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('home')}}">Shop</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('shop')}}">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{route('contact')}}">Contatti</a>
