@@ -1,8 +1,12 @@
 
 <!-- resources/views/shop.blade.php -->
-@extends('layouts.app') <!-- o il layout che usi di solito -->
+@extends('layouts.app') 
 
 @section('title', 'Shop')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('.\assets\style.css') }}">
+@endsection
 
 @section('content')
 <div class="container">
@@ -10,20 +14,44 @@
     <div class="row">
         @foreach($items as $item)
         <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <img src="{{ $item->img ? asset('storage/img/' . $item->img) : 'https://via.placeholder.com/150' }}" class="card-img-top" alt="{{ $item->name }}">
+            <div class="card mb-4 img-thumbnail shadow-sm">
+                <img src="{{ $item->img ? asset('storage/img/' . $item->img) : '.\assets\logo\logo_ladame_web.jpg' }}" class="card-img-top img-thumbnail" alt="{{ $item->name }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $item->name }}</h5>
+                    <h5 class="card-title " >{{ $item->name }}</h5>
                     <p class="card-text">{{ $item->description }}</p>
                     <p class="card-text"><strong>€{{ $item->price }}</strong></p>
-                    <a href="{{ route('shop.show', $item->id) }}" class="btn btn-primary">View Item</a>
+                    <a href="{{ route('shop.show', $item->id) }}" class="btn btn-primary">Dettagli prodotto</a>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
+    {{-- Paginazione --}}
     <div class="d-flex justify-content-center">
-        {{ $items->links() }} <!-- Paginazione -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if ($items->onFirstPage())
+                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                @else
+                <li class="page-item"><a class="page-link" href="{{ $items->previousPageUrl() }}">&laquo;</a>
+                </li>
+                @endif
+
+                @foreach ($items->getUrlRange(1, $items->lastPage()) as $page => $url)
+                @if ($page == $items->currentPage())
+                <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
+                @else
+                <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                @endif
+                @endforeach
+
+                @if ($items->hasMorePages())
+                <li class="page-item"><a class="page-link" href="{{ $items->nextPageUrl() }}">&raquo;</a></li>
+                @else
+                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                @endif
+            </ul>
+        </nav>
     </div>
 </div>
 @endsection

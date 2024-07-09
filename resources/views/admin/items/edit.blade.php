@@ -27,7 +27,7 @@
                             <input type="text" name="name" id="name" class="form-control" value="{{ $item->name }}">
                         </div>
 
-                        <!-- Collezioni del item -->
+                        <!-- Collezioni dell'item -->
                         <div class="mb-3">
                             <div class="mb-3">
                                 <label class="form-label">Collezioni</label>
@@ -45,7 +45,7 @@
                         </div>
                        
 
-                        <!-- Categorie del item -->
+                        <!-- Categorie dell'item -->
                         <div class="mb-3">
                             <label for="category" class="form-label">Categorie</label>
                             <select name="category_id" id="category" class="form-control" required>
@@ -55,7 +55,7 @@
                             </select>
                         </div>
 
-                        <!-- Colori del item -->
+                        <!-- Colori dell'item -->
                         <div class="mb-3">
                             <label for="colors" class="form-label">Colori</label>
                             <select name="colors[]" id="colors" class="form-control" multiple required>
@@ -65,7 +65,7 @@
                             </select>
                         </div>
 
-                        <!-- Misure del item -->
+                        <!-- Misure dell' item -->
                         <div class="mb-3">
                             <label for="sizes" class="form-label">Misure</label>
                             <select name="sizes[]" id="sizes" class="form-control" multiple required>
@@ -75,13 +75,13 @@
                             </select>
                         </div>
 
-                        <!-- Prezzo del item -->
+                        <!-- Prezzo dell' item -->
                         <div class="mb-3">
                             <label for="price" class="form-label">Prezzo</label>
                             <input type="number" name="price" id="price" class="form-control" value="{{ $item->price }}" required>
                         </div>
 
-                        <!-- Descrizione del item -->
+                        <!-- Descrizione dell' item -->
                         <div class="mb-3">
                             <label for="description" class="form-label">Descrizione</label>
                             <textarea name="description" id="description" class="form-control" required>{{ $item->description }}</textarea>

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Collection;
+use App\Models\Color;
 use App\Models\Item;
+use App\Models\Size;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -38,8 +42,12 @@ class ShopController extends Controller
      */
     public function show(string $id)
     {
-        $item = Item::findOrFail($id);
-        return view('shop.show', compact('item'));
+        $collections = Collection::all();
+        $categories = Category::all();
+        $colors = Color::all();
+        $sizes = Size::all();
+        $item = Item::with('categories', 'collections', 'colors', 'sizes')->findOrFail($id);
+        return view('shop.show', compact('item', 'categories', 'collections', 'colors', 'sizes'));
     }
 
     /**

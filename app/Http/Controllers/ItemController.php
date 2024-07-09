@@ -94,6 +94,7 @@ class ItemController extends Controller
 
     public function update(Request $request, string $id)
     {
+
         $validatedData = $this->validateData($request);
         $item = Item::findOrFail($id);
 
@@ -102,8 +103,10 @@ class ItemController extends Controller
         $item->category_id = $validatedData['category_id'];
         $item->price = $validatedData['price'];
 
+        //gestiamo l'immagine
         if ($request->hasFile('img')) {
             $fileName = time() . '_' . $request->file('img')->getClientOriginalName();
+            //carica l'immagine dentro la cartella storage/img
             $imgPath = $request->file('img')->storeAs('img', $fileName, 'public');
             $item->img = $imgPath;
         }
