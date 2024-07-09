@@ -46,7 +46,7 @@ class ShopController extends Controller
         $categories = Category::all();
         $colors = Color::all();
         $sizes = Size::all();
-        $item = Item::with('categories', 'collections', 'colors', 'sizes')->findOrFail($id);
+        $item = Item::with('category', 'collections', 'colors', 'sizes')->findOrFail($id);
         return view('shop.show', compact('item', 'categories', 'collections', 'colors', 'sizes'));
     }
 

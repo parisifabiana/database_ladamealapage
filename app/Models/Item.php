@@ -11,7 +11,7 @@ class Item extends Model
     protected $table = 'items';
     public $timestamps = false;
     protected $fillable = ['name', 'description', 'img', 'price', 'category_id'];
-    public function categories()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }

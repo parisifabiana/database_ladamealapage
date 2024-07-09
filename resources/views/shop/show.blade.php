@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <p><strong>Descrizione:</strong> {{ $item->description }}</p>
             <p><strong>Prezzo:</strong> €{{ $item->price }}</p>
-            <p><strong>Categoria:</strong> {{ $item->category_id }}</p>
+            <p><strong>Categoria:</strong> {{ $item->category->name }}</p>
             <p><strong>Collezioni:</strong> 
                 @foreach($item->collections as $collection)
                     {{ $collection->name }}
