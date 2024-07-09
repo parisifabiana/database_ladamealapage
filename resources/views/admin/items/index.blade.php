@@ -30,7 +30,7 @@
                         <img src="{{ $item->img }}" alt="{{ $item->name }}" class="img-thumbnail"
                             style="max-width: 150px;">
                         @elseif($item->img === null)
-                        <img src="https://cdn.pixabay.com/photo/2023/08/11/16/50/water-8183918_1280.jpg"
+                        <img src="{{ asset('.\assets\logo\logo_ladame_web.jpg') }}"
                             class="img-thumbnail" style="max-width: 150px;">
                         @else
                         <img src="{{ asset('storage/img/' . $item->img) }}" alt="{{ $item->name }}"
