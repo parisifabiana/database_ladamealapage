@@ -15,7 +15,7 @@
         @foreach($items as $item)
         <div class="col-md-4">
             <div class="card mb-4 img-thumbnail shadow-sm">
-                <img src="{{ $item->img ? asset('storage/img/' . $item->img) : '.\assets\logo\logo_ladame_web.jpg' }}" class="card-img-top img-thumbnail" alt="{{ $item->name }}">
+                <img src="{{ $item->img ? asset('storage/' . $item->img) : '.\assets\logo\logo_ladame_web.jpg' }}" class="card-img-top img-thumbnail" alt="{{ $item->name }}">
                 <div class="card-body">
                     <h5 class="card-title " >{{ $item->name }}</h5>
                     <p class="card-text">{{ $item->description }}</p>
