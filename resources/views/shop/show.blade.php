@@ -4,7 +4,7 @@
 @section('title', $item->name)
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('.\assets\style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\style.css') }}">
 @endsection
 
 @section('content')
