@@ -12,7 +12,7 @@
     <h1>{{ $item->name }}</h1>
     <div class="row">
         <div class="col-md-6">
-            <img src="{{ $item->img ? asset('storage/img/' . $item->img) : '.\assets\logo\logo_ladame_web.jpg' }}" class="img-fluid" alt="{{ $item->name }}">
+            <img src="{{ $item->img ? asset('storage/' . $item->img) : '.\assets\logo\logo_ladame_web.jpg' }}" class="img-fluid" alt="{{ $item->name }}">
         </div>
         <div class="col-md-6">
             <p><strong>Descrizione:</strong> {{ $item->description }}</p>

@@ -33,7 +33,7 @@
                         <img src="{{ asset('.\assets\logo\logo_ladame_web.jpg') }}"
                             class="img-thumbnail" style="max-width: 150px;">
                         @else
-                        <img src="{{ asset('storage/img/' . $item->img) }}" alt="{{ $item->name }}"
+                        <img src="{{ asset('storage/' . $item->img) }}" alt="{{ $item->name }}"
                             class="img-thumbnail" style="max-width: 150px;">
                         @endif
                     </td>
