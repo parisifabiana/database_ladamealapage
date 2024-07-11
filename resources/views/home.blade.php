@@ -204,8 +204,7 @@
 							</div>
 						</div>						
 					</div>
-				</div>
-				
+				</div>	
 			</div>
 			<!-- Carousel controls -->
 			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">

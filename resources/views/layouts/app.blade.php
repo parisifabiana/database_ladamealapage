@@ -13,7 +13,7 @@
 <body>
     <header>
     <!-------------NAVBAR --------->
-        <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand">
             <img height="100px"src="{{asset ('.\assets\logo\minilogo.png')}}">
             </a>
@@ -44,7 +44,7 @@
         <section>
           <div class="container text-center text-md-start mt-5" id="footer">
             <div class="row mt-3">
-      
+                
                   <!-- Promo -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold mb-4"></i>La dame à la page</h6>
@@ -61,7 +61,6 @@
                 <p><a href="#!" class="text-reset">Magia</a>
                 </p>
                 <p><a href="#!" class="text-reset">Romantic</a></p>
-              
             </div>
              
                 <!-- Menu -->
@@ -78,7 +77,6 @@
                 <p>
                   <a href="#contatti" class="text-reset">Contatti</a>
                 </p>
-            
             </div>
             
                  <!-- Info -->
@@ -87,8 +85,6 @@
                 <p>ladamealapage@gmail.com</p>
                 <p> + 01 234 567 88</p>
                 <p><a href="https://www.instagram.com/ladamealapage/"><i class="fa-brands fa-instagram fa-lg"></i></a>  <a href="https://www.facebook.com/ladamealapage"><i class="fa-brands fa-facebook fa-lg"></i></a></p>
-            </div>
-      
             </div>
         </section>   
     </footer>
