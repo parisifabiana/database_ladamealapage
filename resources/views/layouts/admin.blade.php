@@ -24,7 +24,7 @@
 <body>
     <div id="app">
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                     Dashboard
@@ -77,11 +77,58 @@
                 @yield('content')
             </div>
         </main>
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <span class="text-muted">© {{ date('Y') }} La dame à la page. All rights reserved.</span>
-            </div>
+        <!------FOOTER---------->
+        <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+            <section>
+            <div class="container text-center text-md-start mt-5" id="footer">
+                <div class="row mt-3">
+        
+                    <!-- Promo -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"></i>La dame à la page</h6>
+                    <p><b>Il tuo stile, i tuoi accessori.</b><br> Con La dame à la page  puoi rinnovare il tuo look ogni volta che vuoi per essere ogni giorno diversa ma sempre unica.</p>
+                </div>
+            
+                <!-- Collezioni --> 
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                    Collezioni
+                    </h6>
+                    <p><a href="#!" class="text-reset">Estate</a>
+                    </p>
+                    <p><a href="#!" class="text-reset">Magia</a>
+                    </p>
+                    <p><a href="#!" class="text-reset">Romantic</a></p>
+                
+                </div>
+                
+                    <!-- Menu -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                    Menu
+                    </h6>
+                    <p>
+                    <a href="#home" class="text-reset">Home</a>
+                    </p>
+                    <p>
+                    <a href="#shop" class="text-reset">Shop</a>
+                    </p>
+                    <p>
+                    <a href="#contatti" class="text-reset">Contatti</a>
+                    </p>
+                
+                </div>
+                
+                    <!-- Info -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="info">
+                    <h6 class="text-uppercase fw-bold mb-4">Info</h6>
+                    <p>ladamealapage@gmail.com</p>
+                    <p> + 01 234 567 88</p>
+                    <p><a href="https://www.instagram.com/ladamealapage/"><i class="fa-brands fa-instagram fa-lg"></i></a>  <a href="https://www.facebook.com/ladamealapage"><i class="fa-brands fa-facebook fa-lg"></i></a></p>
+                </div>
+        
+                </div>
+            </section>   
         </footer>
     </div>
     <!-- Includi script JavaScript Bootstrap -->

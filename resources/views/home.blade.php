@@ -2,6 +2,10 @@
 
 @section('title', 'La dame à la page')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css\app.css') }}">
+@endsection
+
 @section('content')
       
 <!------JUMBOTRON------->
@@ -11,7 +15,7 @@
     <h1 class="display-4">Il tuo stile, i tuoi accessori</h1>
     <p class="lead">La nuova collezione estate ti aspetta!</p>
     <div class= "flex-btn">
-        <a class="btn btn-primary btn-shop btn-lg d-flex justify-content-center" href="{{route('shop')}}" role="button"> Shop now > </a>
+        <a class="btn btn-primary btn-shop btn-lg d-flex justify-content-center btn-shop" href="{{route('shop')}}" role="button"> Shop now > </a>
     </div>
     </div>
 </header>
