@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css\admin.css') }}">
+@endsection
+
 @section('content')
 
 <div class="container my-5">
@@ -14,7 +18,7 @@
                 </div>
 
                 <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                 aria-describedby="emailHelp" required>
                 </div>
@@ -26,12 +30,12 @@
                 </div>
 
                 <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                <label for="exampleInputPassword2" class="form-label">Conferma Password</label>
                 <input type="password" name="password_confirmation" class="form-control"
                 id="exampleInputPassword2" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Accedi</button>
             </form>
         </div>
     </div>

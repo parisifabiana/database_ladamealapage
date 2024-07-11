@@ -5,7 +5,7 @@
 @section('title', 'Shop')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('.\assets\style.css') }}">
+    <link rel="stylesheet" href="{{ asset('.\assets\app.css') }}">
 @endsection
 
 @section('content')
