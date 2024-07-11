@@ -26,13 +26,12 @@ body {
 
 .navbar {
 	background-color: #ffffff;
-	padding:18px;
+	padding: 18px;
 }
   
 nav {
 	box-shadow: 0 2px 6px 0 #16151533;
 }
-
 
 .navbar-brand, .navbar-brand:hover, .navbar-brand:visited {
 	  font-weight: 600;
