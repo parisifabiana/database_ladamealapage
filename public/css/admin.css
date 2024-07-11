@@ -9,6 +9,14 @@ body {
     font-family: "Fahkwang", sans-serif;
 }
 
+a {
+    color:#e14790;
+}
+
+input {
+    color: #e14790;
+}
+
 .navbar {
 	background-color: pink;
 	padding:18px;
@@ -54,4 +62,18 @@ nav {
 #info i{
 	  margin-right: 10px;
 	  color: #e14790;
+}
+
+/* Pagination */
+
+.page-link  {
+    background-color:#ffffff;
+    border: #ffffff;
+    color:#e14790;
+}
+
+.active>.page-link{
+    background-color: #e14790;
+    border: #1ab0b1;
+    color:#ffffff;
 }
