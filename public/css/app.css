@@ -10,6 +10,10 @@ body {
   font-family: "Fahkwang", sans-serif;
 }
 
+.card-title {
+	color:#e14790
+}
+
 .flex-menu {
   display: flex;
   align-items: center;
@@ -52,31 +56,49 @@ nav {
 
 /*------JUMBOTRON-------*/
 
-.jumbotron {
-  width: 1320px;
+.jumbotron-container {
+  min-height: 60vh;
   background-repeat: no-repeat;
-  background-size: contain;
-  border-bottom: 1px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   color:#ffffff;
   position: relative;
 }
 
+.jumbotron-container .container {
+	overflow: hidden;
+}
+
 .display-4 {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 200;
-  padding:25px;
+  padding: 20px;
+  color: #ffffff;
   position: absolute;
-  top: 100px;
-  left: 20px;
+  top: 10px;
+  left: 100px;
+  max-width: 600px;
 }
 
 .lead {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 300;
   position: absolute;
-  left: 50px;
-  bottom: 180px;
+  color: #ffffff;
+  padding: 20px;
+  margin: 80px 0px 60px 0px;
+  top: 60px;
+  left: 100px;
+  max-width: 600px;
 }
+
+.btn-shop {
+	position: absolute;
+	top: 200px;
+	left: 150px;
+}	
 
 .btn {
   margin: 25px 0 0 25px;
@@ -96,11 +118,7 @@ nav {
     border:#e14790;
 }
 
-.btn-shop {
-	position: absolute;
-  	left: 30px;
-  	bottom: 120px;
-}
+
 
 /* Pagina shop -  */
 .img-thumbnail {
@@ -110,6 +128,14 @@ nav {
 
 /*------Carousel-------*/
 
+#promo {
+	color:#e14790;
+	font-size: 30px;
+	font-weight: 300;
+	text-align: center;
+	position: relative;
+	margin: 30px 0 80px;
+}
 
 h2 {
 	color:#e14790;
@@ -145,6 +171,7 @@ h4 {
 	text-align: center;
 	overflow: hidden;
 }
+
 .carousel .carousel-item .img-box {
 	height: 160px;
 	width: 100%;
@@ -232,8 +259,7 @@ h4 {
 	font-size: 110%;
 }	
 .carousel .carousel-indicators {
-	bottom: -50px;
-    
+	bottom: -50px; 
 }
 
 .carousel-indicators li, .carousel-indicators li.active {
@@ -258,21 +284,6 @@ h4 {
 	color: #1ab0b1;
 }
 
-/*------Footer-------*/
-
-#footer {
-	padding-top:50px;
-  }
-  
-#footer h6 {
-	color: #1ab0b1;
-  }
-  
-#info i{
-	  margin-right: 10px;
-	  color: #e14790;
-}
-
 /*------Contatti-------*/
 
 .masthead {
@@ -281,6 +292,20 @@ h4 {
   padding:35px;
 }
 
+/*------Footer-------*/
+
+#footer {
+  padding-top:50px;
+}
+
+#footer h6 {
+  color: #1ab0b1;
+}
+
+#info i{
+    margin-right: 10px;
+    color: #e14790;
+}
 
 /* Pagination */
 
