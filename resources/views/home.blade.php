@@ -9,22 +9,26 @@
 @section('content')
       
 <!------JUMBOTRON------->
-
-<div class="jumbotron container">
-    <img src=".\assets\img\background.jpg" alt="background" class="jumbotron">
-    <h1 class="display-4">Il tuo stile, i tuoi accessori</h1>
-    <p class="lead">La nuova collezione estate ti aspetta!</p>
-    <div class= "flex-btn">
-        <a class="btn btn-primary btn-shop btn-lg d-flex justify-content-center btn-shop" href="{{route('shop')}}" role="button"> Shop now > </a>
-    </div>
-    </div>
+<header>
+	<div class="jumbotron-container">
+		<img src=".\assets\img\background.jpg" class="jumbotron-container">
+		<div class="color-overly">
+			<div class="container">
+				<h1 class="display-4">Il tuo stile, i tuoi accessori</h1>
+				<p class="lead">La nuova collezione estate ti aspetta!</p>
+			</div>
+		</div>
+		<div class= "flex-btn">
+			<a class="btn btn-primary btn-shop btn-lg d-flex justify-content-center btn-shop" href="{{route('shop')}}" role="button"> Shop now > </a>
+		</div>
+	</div>
 </header>
 <!------CAROUSEL------->
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h2>I vostri preferiti in offerta!</h2>
+			<h2 id="promo">I vostri preferiti in offerta!</h2>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
 		 
 			<!-- Wrapper for carousel items -->
@@ -48,7 +52,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded"> Acquista ora!</a>
 								</div>						
 							</div>
 						</div>
@@ -69,7 +73,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded"> Acquista ora!</a>
 								</div>						
 							</div>
 						</div>		
@@ -90,7 +94,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded"> Acquista ora!</a>
 								</div>						
 							</div>
 						</div>								
@@ -111,7 +115,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded">Acquista ora!</a>
 								</div>						
 							</div>
 						</div>
@@ -136,7 +140,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded">Acquista ora!</a>
 								</div>						
 							</div>
 						</div>
@@ -157,7 +161,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded">Acquista ora!</a>
 								</div>						
 							</div>
 						</div>
@@ -178,7 +182,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded">Acquista ora!</a>
 								</div>						
 							</div>
 						</div>
@@ -199,7 +203,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary rounded">Add to Cart</a>
+									<a href="#" class="btn btn-primary rounded">Acquista ora!</a>
 								</div>						
 							</div>
 						</div>						

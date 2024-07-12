@@ -12,39 +12,45 @@
 
 <body>
     <header>
-    <!-------------NAVBAR --------->
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand">
-            <img height="100px"src="{{asset ('.\assets\logo\minilogo.png')}}">
-            </a>
-            <a class="navbar-brand {{Request::routeIs('home') ? 'active' : '' }}" href="{{route('home')}}">La dame à la page</a> 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto ">
-                <li class="nav-item active">
-                    <a class="nav-link {{Request::routeIs('home') ? 'active' : '' }}" href="{{route('home')}}">Home </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{Request::routeIs('shop') ? 'active' : '' }}" href="{{route('shop')}}"> Shop </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link {{Request::routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}"> Contatti</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link {{Request::routeIs('admin.dashboard') ? 'active' : '' }}" href="{{route('admin.dashboard')}}">Dashboard</a>
-                </li>
-                </ul>
-            </div>
-        </nav>
+        <!-------------NAVBAR --------->
+    <nav class="navbar navbar-expand-lg ">
+		
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		<a class="navbar-brand">
+		  <img height="100px"src="{{asset ('.\assets\logo\minilogo.png')}}">
+		</a>
+		<a class="navbar-brand" {{Request::routeIs('home') ? 'active' : '' }}" href="{{route('home')}}">La dame à la page</a> 
+
+        <div class="collapse navbar-collapse" id="menu">
+			<ul class="navbar-nav ms-auto ">
+			  <li class="nav-item active">
+				<a class="nav-link" {{Request::routeIs('home') ? 'active' : '' }}" href="{{route('home')}}">Home </a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" {{Request::routeIs('shop') ? 'active' : '' }}" href="{{route('shop')}}">Shop</a>
+			  </li>
+			  <li class="nav-item active">
+				  <a class="nav-link" {{Request::routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}">Contatti</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link"  {{Request::routeIs('admin.dashboard') ? 'active' : '' }}" href="{{route('admin.dashboard')}}">Dashboard</a>
+			</li>
+	        </ul>
+        </div>
+	
+		</nav>
     </header>
     <main>
         @yield('content')
     </main>
+    
     <!------FOOTER---------->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
         <section>
           <div class="container text-center text-md-start mt-5" id="footer">
-            <div class="row mt-3">
-                
+            <div class="row mt-3">   
                   <!-- Promo -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold mb-4"></i>La dame à la page</h6>
